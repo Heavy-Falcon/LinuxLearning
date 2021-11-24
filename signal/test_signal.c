@@ -7,11 +7,9 @@ void f(int signal_no) {
 	printf("got a signal: %d\n", signal_no);
 }
 
-// for test
-
 int main(int argc, char *argv[]) {
 	while (1) {
-		signal(2, f);		// 将收到2号信号后的动作改为执行函数f，而不是终止进程
+		signal(2, f);		// 注册2号信号的捕捉方式为执行函数f
 		sleep(1);
 	}
 	return 0;
